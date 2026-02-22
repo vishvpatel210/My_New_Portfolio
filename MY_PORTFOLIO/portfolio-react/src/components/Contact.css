@@ -1,0 +1,237 @@
+.contact {
+  padding: 120px 0;
+  /* Match Hero/Skills: Transparent to show global starfield & dark body bg */
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.contact-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-wrap .section-sub {
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.social-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.social-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  border: 1.5px solid var(--border);
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--text-dim);
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s var(--ease), border-color 0.35s, color 0.35s, box-shadow 0.35s, background 0.35s;
+}
+
+.social-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  border-color: var(--neon);
+  color: var(--neon);
+  box-shadow: 0 0 22px var(--neon-glow), 0 8px 24px rgba(0, 0, 0, 0.25);
+  background: var(--bg-card-hover);
+}
+
+.social-btn .tooltip {
+  position: absolute;
+  bottom: -28px;
+  font-family: var(--font-code);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--neon);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+}
+
+.social-btn:hover .tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-family: var(--font-code);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.form-group input,
+.form-group textarea {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 18px;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+  outline: none;
+  resize: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--neon);
+  box-shadow: 0 0 16px var(--neon-subtle);
+  background: var(--bg-card-hover);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-dim);
+  opacity: 0.55;
+}
+
+.form-group textarea {
+  min-height: 130px;
+}
+
+.form-submit-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 6px;
+}
+
+.btn-send {
+  font-family: var(--font-code);
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 16px 42px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--neon), #22c55e);
+  color: #08091a;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.35s, transform 0.2s, filter 0.3s;
+  box-shadow: 0 4px 24px var(--neon-subtle);
+}
+
+.btn-send:hover {
+  box-shadow: 0 0 28px var(--neon-glow), 0 6px 32px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.btn-send:active {
+  transform: scale(0.96);
+}
+
+.form-status {
+  font-family: var(--font-code);
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.form-status.show {
+  opacity: 1;
+}
+
+.form-status.success {
+  color: var(--neon);
+}
+
+.form-status.error {
+  color: #f87171;
+}
+
+.contact-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-code);
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  padding: 14px 32px;
+  border: 1px solid var(--border);
+  border-radius: 40px;
+  background: var(--bg-card);
+  transition: border-color 0.35s, box-shadow 0.35s, background 0.35s, color 0.35s;
+  cursor: pointer;
+  margin-top: 24px;
+}
+
+.contact-email:hover {
+  border-color: var(--neon);
+  box-shadow: 0 0 18px var(--neon-subtle);
+  color: var(--neon);
+  background: var(--bg-card-hover);
+}
+
+.contact-email .mail-icon {
+  color: var(--neon);
+  font-size: 1.1rem;
+}
+
+.falling-particle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  border-radius: 50%;
+  animation: fallDown var(--fall-dur, 6s) linear infinite;
+  animation-delay: var(--fall-delay, 0s);
+}
+
+@media (max-width: 700px) {
+  .social-row {
+    gap: 14px;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,57 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10000;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--neon);
+  box-shadow: 0 0 8px var(--neon-glow), 0 0 20px var(--neon-subtle);
+  transform: translate(-50%, -50%);
+  transition: width 0.2s var(--ease), height 0.2s var(--ease), background 0.25s, box-shadow 0.25s, border 0.25s;
+  will-change: transform;
+  mix-blend-mode: difference;
+}
+
+.cursor-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--neon-line);
+  transform: translate(-50%, -50%);
+  transition: width 0.3s var(--ease), height 0.3s var(--ease), border-color 0.3s;
+  will-change: transform;
+}
+
+body.c-hover .cursor {
+  width: 20px;
+  height: 20px;
+  background: var(--blue);
+  box-shadow: 0 0 16px var(--blue-glow), 0 0 36px var(--blue-subtle);
+  mix-blend-mode: normal;
+}
+
+body.c-hover .cursor-trail {
+  width: 56px;
+  height: 56px;
+  border-color: var(--blue-glow);
+}
+
+body.c-click .cursor {
+  width: 6px;
+  height: 6px;
+}
+
+body.c-click .cursor-trail {
+  width: 70px;
+  height: 70px;
+  border-color: var(--neon-glow);
+  opacity: 0.4;
+}

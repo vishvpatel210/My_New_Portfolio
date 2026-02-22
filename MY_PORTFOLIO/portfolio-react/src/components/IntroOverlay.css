@@ -1,0 +1,81 @@
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  background: #08091a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 24px;
+  transition: opacity 0.6s ease;
+}
+
+.intro-overlay.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.intro-rocket-canvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+.intro-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-family: var(--font-head);
+  color: #fff;
+}
+
+.intro-text .logo {
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.intro-text .logo span {
+  color: var(--neon);
+  text-shadow: 0 0 30px var(--neon-glow);
+}
+
+.intro-text .tagline {
+  font-family: var(--font-code);
+  font-size: 0.72rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.intro-skip {
+  position: absolute;
+  bottom: 40px;
+  right: 48px;
+  z-index: 10;
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  cursor: pointer;
+  padding: 10px 18px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  transition: color 0.3s, border-color 0.3s, background 0.3s;
+}
+
+.intro-skip:hover {
+  color: var(--neon);
+  border-color: var(--neon);
+  background: var(--neon-subtle);
+}

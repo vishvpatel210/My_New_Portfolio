@@ -1,0 +1,102 @@
+.skills-section {
+  position: relative;
+  width: 100%;
+  height: 90vh; /* Immersive height */
+  min-height: 600px;
+  background: radial-gradient(circle at center, #05071a 0%, #000000 100%);
+  
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Central Text Overlay */
+.solar-center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none; /* Let clicks pass through to 3D scene */
+  z-index: 10;
+  width: 100%;
+}
+
+.glow-text {
+  font-family: var(--font-head);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 900;
+  color: #ffaa00; /* Matching sun color */
+  text-shadow: 0 0 20px rgba(255, 170, 0, 0.6);
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.05em;
+  opacity: 0.9;
+}
+
+.sub-glow {
+  font-family: var(--font-code);
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Tooltip */
+.skill-tooltip {
+  position: absolute;
+  bottom: 15%; /* Fixed position at bottom center or context sensitive? User asked for hover. 
+                 Since 3D is moving, a fixed overlay is cleaner than chasing cursor in 3D sometimes.
+                 Let's center it or put it near bottom. */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(8, 9, 26, 0.9);
+  border: 1px solid currentColor;
+  padding: 12px 24px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  text-align: center;
+  pointer-events: none;
+  z-index: 20;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  animation: fadeIn 0.3s ease;
+}
+
+.skill-name {
+  font-family: var(--font-head);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.skill-hint {
+  font-family: var(--font-code);
+  font-size: 0.75rem;
+  opacity: 0.7;
+  color: #fff;
+}
+
+/* Instructions */
+.skills-instructions {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  opacity: 0.4;
+  letter-spacing: 0.15em;
+  pointer-events: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, 10px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}

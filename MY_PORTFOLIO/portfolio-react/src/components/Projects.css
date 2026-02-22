@@ -1,0 +1,211 @@
+.projects {
+  padding: 120px 0;
+}
+
+.projects-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 28px;
+}
+
+.project-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s, border-color 0.4s, background 0.35s;
+  position: relative;
+  backdrop-filter: blur(5px);
+}
+
+.project-card:hover {
+  border-color: var(--neon-line);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4), 0 0 28px var(--neon-subtle);
+  background: var(--bg-card-hover);
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--neon), transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
+  z-index: 2;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-thumb {
+  height: 190px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-layer);
+}
+
+.thumb-grad {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.55s var(--ease);
+}
+
+.project-card:hover .thumb-grad {
+  transform: scale(1.08);
+}
+
+.thumb-1 {
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+}
+
+.thumb-2 {
+  background: linear-gradient(135deg, #0d1117, #1e2a3a, #2d4a6f);
+}
+
+.thumb-3 {
+  background: linear-gradient(135deg, #1a0a2e, #2d1b4e, #1f3a5f);
+}
+
+.thumb-4 {
+  background: linear-gradient(135deg, #0a1f1a, #162e22, #1e4a3a);
+}
+
+.thumb-5 {
+  background: linear-gradient(135deg, #2e1a0a, #4a2d16, #3a1e1e);
+}
+
+.thumb-6 {
+  background: linear-gradient(135deg, #0a0a2e, #1a1a4e, #2e2e5f);
+}
+
+.thumb-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.35s;
+  background: rgba(8, 9, 26, 0.5);
+}
+
+.project-card:hover .thumb-overlay {
+  opacity: 1;
+}
+
+.thumb-badge {
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  background: rgba(8, 9, 26, 0.8);
+  border: 1px solid var(--neon-line);
+  color: var(--neon);
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 16px var(--neon-subtle);
+}
+
+.thumb-dots {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.thumb-dots span {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--neon);
+  opacity: 0.5;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.project-body {
+  padding: 26px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.project-tags span {
+  font-family: var(--font-code);
+  font-size: 0.68rem;
+  color: var(--blue);
+  background: var(--blue-subtle);
+  padding: 3px 10px;
+  border-radius: 12px;
+  letter-spacing: 0.06em;
+}
+
+.project-name {
+  font-family: var(--font-head);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.project-desc {
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.project-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.project-link {
+  font-family: var(--font-code);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 7px 16px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  background: transparent;
+  transition: border-color 0.3s, color 0.3s, box-shadow 0.3s, background 0.3s, transform 0.2s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-link:hover {
+  border-color: var(--neon);
+  color: var(--neon);
+  box-shadow: 0 0 14px var(--neon-subtle);
+  background: var(--neon-subtle);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 700px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
